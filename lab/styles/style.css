@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 70px;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.curtain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+    background: url('../images/1.jpg');
+    background-size: cover;
+    background-position:center bottom;
+    z-index: 10;
+}
+
+.curtain:hover {
+    bottom: 5%;
+}
+
+.curtain-open {
+    transition: 1s;
+    bottom: 100%;
+}
+
+.curtain-open:hover {
+    bottom: 100%;
+}
+
+#lamp {
+    display: flex;
+    justify-content: center;
+}
+
+#lamp>img {
+    width: 300px;
+    margin-top: 50px;
+    z-index: 8;
+}
+
+.switch {
+    width: 8px;
+    height: 76px;
+    position: absolute;
+    left: calc(50% - 28px);
+    top: 106px;
+    transition: .1s;
+    z-index: 5;
+}
+
+#lamp:active {
+    .switch {
+        top: 118px;
+    }
+}
+
+.line {
+    width: 2px;
+    height: 68px;
+    position: absolute;
+    left: 3px;
+    bottom: 8px;
+    background-color: gray;
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.light {
+    display: flex;
+    align-items: end;
+    width: 800px;
+    height: calc(100% - 118px - 75px);
+    position: absolute;
+    left: calc(50% - 400px);
+    top: 0;
+    margin-top: 118px;
+    margin-bottom: 75px;
+    background-color: yellow;
+    clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
+    opacity: 0.5;
+    transition: .2s;
+    z-index: 7;
+    pointer-events: none;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+}
+
+.trick {
+    position: relative;
+}
+
+.wizard>img {
+    width: 360px;
+}
+
+.hat {
+    width: 180px;
+    position: relative;
+    transform: rotate(180deg);
+    z-index: 5;
+}
+
+.elements {
+    width: 64px;
+    position: absolute;
+    top: -90px;
+    left: 64px;
+    transition: .5s;
+    z-index: 1;
+}
+
+.elements-hide {
+    top: 20px;
+}
+
+.hide {
+    opacity: 0;
+}
